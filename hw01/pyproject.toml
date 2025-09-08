@@ -1,0 +1,27 @@
+# pyproject.toml.jinja
+
+[project]
+name = "hw01"
+version = "0.1.0"
+description = "Linear regression with Gaussian basis functions. Learned parameters through stochastic gradient descent"
+readme = "README.md"
+authors = [
+    { name = "Josh Miao", email = "joshuamiao03@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "structlog",
+    "rich",
+    "numpy",
+    "jax",
+    "flax",
+    "matplotlib>=3.10.6",
+    "nnx>=0.0.8",
+]
+
+[project.scripts]
+hw01 = "hw01:main"
+
+[build-system]
+requires = ["uv_build>=0.8.3,<0.9.0"]
+build-backend = "uv_build"

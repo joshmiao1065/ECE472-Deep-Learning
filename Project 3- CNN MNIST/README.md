@@ -1,3 +1,3 @@
 # hw03
 
-MNIST CNN
+MNIST CNN classifier

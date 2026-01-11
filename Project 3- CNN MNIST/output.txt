@@ -1,0 +1,190 @@
+josh@JoshsGalaxyBook:/mnt/c/Users/joshu/OneDrive/Cooper Union/DL_laptop/hw03$ just run hw03
+==> Running homework 'hw03'...
+2025-09-24T23:49:07.103642Z [info     ] Settings loaded                [hw03] settings={'debug': False, 'random_seed': 427, 'data': {'train_ratio': 0.8}, 'training': {'batch_size': 128, 'num_iters': 1000, 'learning_rate': 0.001, 'L2_weight': 0.001}, 'model': {'input_depth': 1, 'num_classes': 10, 'layer_depth': [32, 64], 'layer_kernel_sizes': [[3, 3], [3, 3]], 'strides': [2, 2], 'dropout_rate': 0.1, 'shape': [28, 28]}}
+WARNING:2025-09-24 19:49:07,355:jax._src.xla_bridge:864: An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
+An NVIDIA GPU may be present on this machine, but a CUDA-enabled jaxlib is not installed. Falling back to cpu.
+2025-09-24T23:49:09.105202Z [info     ] MNIST data retrieved           [hw03] shape=(48000, 28, 28, 1)
+2025-09-24T23:49:10.434408Z [info     ] spiral model generated!        [hw03] params=Classify( # Param: 50,186 (200.7 KB), RngState: 12 (72 B), Total: 50,198 (200.8 KB)
+  input_depth=1,
+  layer_depths=[32, 64],
+  layer_kernel_sizes=[[3, 3], [3, 3]],
+  strides=[2, 2],
+  num_classes=10,
+  dropout_rate=0.1,
+  L2_weight=0.001,
+  layers=[Convolution( # RngState: 6 (36 B), Param: 320 (1.3 KB), Total: 326 (1.3 KB)
+    rngs=Rngs( # RngState: 4 (24 B)
+      params=RngStream( # RngState: 2 (12 B)
+        tag='params',
+        key=RngKey( # 1 (8 B)
+          value=Array((), dtype=key<fry>) overlaying:
+          [2379901428 2398724654],
+          tag='params'
+        ),
+        count=RngCount( # 1 (4 B)
+          value=Array(2, dtype=uint32),
+          tag='params'
+        )
+      ),
+      dropout=RngStream( # RngState: 2 (12 B)
+        tag='dropout',
+        key=RngKey( # 1 (8 B)
+          value=Array((), dtype=key<fry>) overlaying:
+          [2379901428 2398724654],
+          tag='dropout'
+        ),
+        count=RngCount( # 1 (4 B)
+          value=Array(1, dtype=uint32),
+          tag='dropout'
+        )
+      )
+    ),
+    L2_weight=0.001,
+    padding='SAME',
+    layer=Conv( # Param: 320 (1.3 KB)
+      kernel_shape=(3, 3, 1, 32),
+      kernel=Param( # 288 (1.2 KB)
+        value=Array(shape=(3, 3, 1, 32), dtype=dtype('float32'))
+      ),
+      bias=Param( # 32 (128 B)
+        value=Array(shape=(32,), dtype=dtype('float32'))
+      ),
+      in_features=1,
+      out_features=32,
+      kernel_size=(3, 3),
+      strides=2,
+      padding='SAME',
+      input_dilation=1,
+      kernel_dilation=1,
+      feature_group_count=1,
+      use_bias=True,
+      mask=None,
+      dtype=None,
+      param_dtype=float32,
+      precision=None,
+      kernel_init=<function variance_scaling.<locals>.init at 0x7fcc88a86520>,
+      bias_init=<function zeros at 0x7fcc89933c40>,
+      conv_general_dilated=<function conv_general_dilated at 0x7fcc89fd4fe0>,
+      promote_dtype=<function promote_dtype at 0x7fcc88a86840>
+    ),
+    dropout=Dropout( # RngState: 2 (12 B)
+      rate=0.1,
+      broadcast_dims=(),
+      deterministic=False,
+      rng_collection='dropout',
+      rngs=RngStream( # RngState: 2 (12 B)
+        tag='dropout',
+        key=RngKey( # 1 (8 B)
+          value=Array((), dtype=key<fry>) overlaying:
+          [2716628393 3028672913],
+          tag='dropout'
+        ),
+        count=RngCount( # 1 (4 B)
+          value=Array(0, dtype=uint32),
+          tag='dropout'
+        )
+      )
+    )
+  ), Convolution( # RngState: 6 (36 B), Param: 18,496 (74.0 KB), Total: 18,502 (74.0 KB)
+    rngs=Rngs( # RngState: 4 (24 B)
+      params=RngStream( # RngState: 2 (12 B)
+        tag='params',
+        key=RngKey( # 1 (8 B)
+          value=Array((), dtype=key<fry>) overlaying:
+          [ 714023341 1551763251],
+          tag='params'
+        ),
+        count=RngCount( # 1 (4 B)
+          value=Array(2, dtype=uint32),
+          tag='params'
+        )
+      ),
+      dropout=RngStream( # RngState: 2 (12 B)
+        tag='dropout',
+        key=RngKey( # 1 (8 B)
+          value=Array((), dtype=key<fry>) overlaying:
+          [ 714023341 1551763251],
+          tag='dropout'
+        ),
+        count=RngCount( # 1 (4 B)
+          value=Array(1, dtype=uint32),
+          tag='dropout'
+        )
+      )
+    ),
+    L2_weight=0.001,
+    padding='SAME',
+    layer=Conv( # Param: 18,496 (74.0 KB)
+      kernel_shape=(3, 3, 32, 64),
+      kernel=Param( # 18,432 (73.7 KB)
+        value=Array(shape=(3, 3, 32, 64), dtype=dtype('float32'))
+      ),
+      bias=Param( # 64 (256 B)
+        value=Array(shape=(64,), dtype=dtype('float32'))
+      ),
+      in_features=32,
+      out_features=64,
+      kernel_size=(3, 3),
+      strides=2,
+      padding='SAME',
+      input_dilation=1,
+      kernel_dilation=1,
+      feature_group_count=1,
+      use_bias=True,
+      mask=None,
+      dtype=None,
+      param_dtype=float32,
+      precision=None,
+      kernel_init=<function variance_scaling.<locals>.init at 0x7fcc88a86520>,
+      bias_init=<function zeros at 0x7fcc89933c40>,
+      conv_general_dilated=<function conv_general_dilated at 0x7fcc89fd4fe0>,
+      promote_dtype=<function promote_dtype at 0x7fcc88a86840>
+    ),
+    dropout=Dropout( # RngState: 2 (12 B)
+      rate=0.1,
+      broadcast_dims=(),
+      deterministic=False,
+      rng_collection='dropout',
+      rngs=RngStream( # RngState: 2 (12 B)
+        tag='dropout',
+        key=RngKey( # 1 (8 B)
+          value=Array((), dtype=key<fry>) overlaying:
+          [1708850055 3551380339],
+          tag='dropout'
+        ),
+        count=RngCount( # 1 (4 B)
+          value=Array(0, dtype=uint32),
+          tag='dropout'
+        )
+      )
+    )
+  )],
+  final_layer=Linear( # Param: 31,370 (125.5 KB)
+    kernel=Param( # 31,360 (125.4 KB)
+      value=Array(shape=(3136, 10), dtype=dtype('float32'))
+    ),
+    bias=Param( # 10 (40 B)
+      value=Array(shape=(10,), dtype=dtype('float32'))
+    ),
+    in_features=3136,
+    out_features=10,
+    use_bias=True,
+    dtype=None,
+    param_dtype=float32,
+    precision=None,
+    kernel_init=<function variance_scaling.<locals>.init at 0x7fcc88a86520>,
+    bias_init=<function zeros at 0x7fcc89933c40>,
+    dot_general=<function dot_general at 0x7fcc8a15fec0>,
+    promote_dtype=<function promote_dtype at 0x7fcc88a86840>
+  )
+)
+2025-09-24T23:49:10.504129Z [info     ] started training               [hw03.training]
+loss at 999 => 0.218302: 100%|████████████████████████████████████████████████████████████████████████████████| 1000/1000 [00:19<00:00, 51.89it/s]
+2025-09-24T23:49:29.776814Z [info     ] done training                  [hw03.training]
+2025-09-24T23:49:29.777422Z [info     ] training concluded             [hw03]
+2025-09-24T23:49:30.673084Z [info     ] Evaluated validation set: 12000 samples, 11613 correct, Accuracy=96.78% [hw03.test]
+2025-09-24T23:49:30.673745Z [info     ] passed validation w/ acc > 0.96 [hw03]
+2025-09-24T23:49:31.237287Z [info     ] Evaluated test set: 10000 samples, 9739 correct, Accuracy=97.39% [hw03.test]
+2025-09-24T23:49:31.237664Z [info     ] real test accuracy:            [hw03] accuracy=0.9739
+2025-09-24T23:49:31.237775Z [info     ] yippeeeee                      [hw03]
+josh@JoshsGalaxyBook:/mnt/c/Users/joshu/OneDrive/Cooper Union/DL_laptop/hw03$ 

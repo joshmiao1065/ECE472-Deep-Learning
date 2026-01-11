@@ -1,0 +1,3 @@
+# hw03
+
+MNIST CNN

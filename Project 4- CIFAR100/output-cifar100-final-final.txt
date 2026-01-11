@@ -1,0 +1,23 @@
+==> Running homework 'hw04'...
+/mnt/c/Users/joshu/OneDrive/Cooper Union/Deep Learning/hw04/.venv/lib/python3.13/site-packages/pydantic/main.py:463: UserWarning: Pydantic serializer warnings:
+  PydanticSerializationUnexpectedValue(Expected `int` - serialized value may not be as expected [input_value=0.05, input_type=float])
+  return self.__pydantic_serializer__.to_python(
+INFO:hw04:[2m2025-10-09T00:53:22.982046Z[0m [[32m[1minfo     [0m] [1mSettings loaded               [0m [[0m[1m[34mhw04[0m][0m [36msettings[0m=[35m{'debug': False, 'random_seed': 427, 'data': {'train_ratio': 0.8}, 'training': {'batch_size': 256, 'num_iters': 175000, 'learning_rate': 0.00015, 'L2_weight': 0.00015}, 'model': {'input_depth': 3, 'num_classes': 100, 'layer_depth': [64, 128, 256], 'layer_kernel_sizes': [[3, 3], [3, 3], [3, 3]], 'strides': [1, 1, 1], 'shape': [32, 32], 'noise_std': 0.05}}[0m
+INFO:hw04:[2m2025-10-09T00:53:28.617587Z[0m [[32m[1minfo     [0m] [1mcifar100 data retrieved       [0m [[0m[1m[34mhw04[0m][0m [36mshape[0m=[35m(40000, 32, 32, 3)[0m
+INFO:hw04.training:[2m2025-10-09T00:53:48.260701Z[0m [[32m[1minfo     [0m] [1mstarted training              [0m [[0m[1m[34mhw04.training[0m][0m
+
+  0%|          | 0/175000 [00:00<?, ?it/s]
+loss at 0 => 465.868805:   0%|          | 0/175000 [00:44<?, ?it/s]
+loss at 50000 => 1.318601:  29%|██▊       | 50001/175000 [1:36:43<3:54:45,  8.87it/s]
+loss at 100000 => 0.769379:  57%|█████▋    | 100001/175000 [3:12:34<2:10:13,  9.60it/s]
+loss at 150000 => 0.637122:  86%|████████▌ | 150001/175000 [4:47:41<41:22, 10.07it/s]
+loss at 174964 => 0.592589: 100%|█████████▉| 174965/175000 [5:35:21<00:03,  9.76it/s]
+loss at 174999 => 0.812800: 100%|██████████| 175000/175000 [5:35:28<00:00,  8.69it/s]
+INFO:hw04.training:[2m2025-10-09T06:29:16.912630Z[0m [[32m[1minfo     [0m] [1mdone training                 [0m [[0m[1m[34mhw04.training[0m][0m
+INFO:hw04:[2m2025-10-09T06:29:16.921884Z[0m [[32m[1minfo     [0m] [1mtraining concluded            [0m [[0m[1m[34mhw04[0m][0m
+INFO:hw04:[2m2025-10-09T06:29:17.291625Z[0m [[32m[1minfo     [0m] [1msaved most recent checkpoint  [0m [[0m[1m[34mhw04[0m][0m
+INFO:hw04.test:[2m2025-10-09T06:30:04.425090Z[0m [[32m[1minfo     [0m] [1mEvaluated validation set: 10000 samples, 8167 correct (top-5), Accuracy=81.67%[0m [[0m[1m[34mhw04.test[0m][0m
+INFO:hw04:[2m2025-10-09T06:30:04.425528Z[0m [[32m[1minfo     [0m] [1mvalidation top5 accuracy:     [0m [[0m[1m[34mhw04[0m][0m [36mval_accuracy[0m=[35m0.8167[0m
+INFO:hw04.test:[2m2025-10-09T06:30:06.457077Z[0m [[32m[1minfo     [0m] [1mEvaluated test set: 10000 samples, 8134 correct (top-5), Accuracy=81.34%[0m [[0m[1m[34mhw04.test[0m][0m
+INFO:hw04:[2m2025-10-09T06:30:06.457469Z[0m [[32m[1minfo     [0m] [1mreal test top5 accuracy:      [0m [[0m[1m[34mhw04[0m][0m [36maccuracy[0m=[35m0.8134[0m
+INFO:hw04:[2m2025-10-09T06:30:06.457569Z[0m [[32m[1minfo     [0m] [1mthis is not state of the art :([0m [[0m[1m[34mhw04[0m][0m

@@ -1,0 +1,36 @@
+I started by literally training on cifar10 without changing anythin meaning
+i didnt use data augmentaation, add group normalization, or residual blocks. 
+this was purely a CNN w 2 convolutional layers followedby fully connected layers
+and i got like 65% which isny bad for relying almost solely on the inductive 
+biases of a convolution. It trained quickly but obviously didnt generalize.
+
+I then added data augmentation with crop, color jitter, flips(vertical and horizontal),
+and 90 degree rotations which yielded a cifar10 accuracy of rouhgly 80%. Adding 
+group normalization made it less intensive for my GPU to train larger batch sizes faster.
+Additionally, i used the residual blocks from the nnx module to implement skip
+connections. i used kaiming he initialization bc the PReLU paper said it was good lol.
+All of this got me to an accuracy of like 92% on the validation set which was my best 
+score and better than what i currently have lol. I then added awgn to activations during training 
+because i thought that it would help regualarize and be able to simmulate data variability but 
+it low key made no difference. I actually thought i was so smart for adding awgn in the modul
+but i guess im just not that guy. After hitting a plateu, i tried adjusting my data augmentations
+by getting rid of rotation bc it was just too annoying to consider how the orientation of certain 
+objects should be included also jax has no rotation function so unless its by 90 degrees, idk how 
+to rotate easily. I then added awgn to the pictures to try and make the models more robust as well 
+as greyscale, as suggest by Vaibhav. He also said to try inverting the colors and Professor,
+you are so right because he said that you said it makes no fucking sense bc why would it? His 
+rational was that a green frog inverted to a black frog is still a frog???? first of all inverting 
+green is not black, its magenta. and second of all, most animals come only in certain colors??? Anyway,
+sorry for the side tangent. It must have been Vaibav's bad luck because my model declined in performance
+after including awgn and greyscale to the data augmentation to 88% on the validation set so that's where
+I'm at now. It's not state of the art. Every paper boasts 99% on CIFAR10 but i found some random guy
+boasting his 93% which i will interpret as state of the art bc he is all but one man and not the
+DL avengers assembled to conquer CIFAR10, CIFAR100, and every possible dataset. 
+
+It's worth noting that for the trial ruuns, i trained until the loss started to converge to a number 
+around 1 which took about 15k its and 20 minutes. I really thought increasing that number to like 200k
+would help because the loss would drop to like .2 in some cases but i only got an increased performance 
+of a couple percent meaning that i probably reached a point where i was overfitting.
+
+Sorry that i couldnt even get 90 percent on CIFAR100 top5 accuacy btw despite even my extension. I tried;
+I really did. Thanks for the extension though.
